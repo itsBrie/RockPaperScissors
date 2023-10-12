@@ -13,7 +13,14 @@ function getPlayerChoice() {
     let player = prompt("Which do you choose? rock , paper, scissors");
     return (player);
 }
-
+function game() {
+    let replay = 0;
+    while (replay <= 5) {
+        playRound();
+        replay++;
+    }
+    endGame();
+}
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = getPlayerChoice();
