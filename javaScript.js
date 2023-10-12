@@ -69,3 +69,10 @@ function endGame() {
     }
     return (alert(outcome))
 }
+function startGame() {
+    alert("Welcome to The Rock, Paper, Scissors Game...Let's begin");
+    game();
+}
+
+
+startGame();
