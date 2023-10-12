@@ -13,3 +13,38 @@ function getPlayerChoice() {
     let player = prompt("Which do you choose? rock , paper, scissors");
     return (player);
 }
+
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    let rock = "rock";
+    let paper = "paper";
+    let scissors = "scissors";
+    // playerScore = 0;
+    // computerScore = 0;
+
+    if ((playerSelection === computerSelection)) {
+        computerScore++;
+        playerScore++;
+    }
+    else if ((playerSelection === rock) && (computerSelection === paper)) {
+        computerScore++;
+    } else if ((playerSelection === rock) && (computerSelection === scissors)) {
+        playerScore++;
+    } else if ((playerSelection === paper) && (computerSelection === scissors)) {
+        computerScore++;
+    } else if ((playerSelection === paper) && (computerSelection === rock)) {
+        playerScore++;
+    } else if ((playerSelection === scissors) && (computerSelection === rock)) {
+        computerScore++;
+    } else if ((playerSelection === scissors) && (computerSelection === paper)) {
+        playerScore++;
+    }
+    else {
+        alert("No Luck");
+    }
+    alert("Player Score: " + playerScore + " Computer Score: " + computerScore);
+    let tally = (playerScore + " and " + computerScore);
+    return (tally);
+}
