@@ -55,3 +55,17 @@ function playRound(playerSelection, computerSelection) {
     let tally = (playerScore + " and " + computerScore);
     return (tally);
 }
+
+function endGame() {
+    let outcome;
+
+    if (playerScore > computerScore) {
+        outcome = ("The player wins with a total of " + playerScore + " points");
+    }
+    else if(computerScore>playerScore) {
+        outcome = ("The computer wins with a total of " + computerScore + " points");
+    } else{
+        outcome=("The computer and player have tied!");
+    }
+    return (alert(outcome))
+}
