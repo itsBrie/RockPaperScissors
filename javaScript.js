@@ -2,6 +2,8 @@ let playerScore=0;
 let computerScore=0;
 let player;
 let replay = 0;
+let eventStatement="";
+let round=1;
 
 function getComputerChoice() {
     let choices = ["rock", "paper", "scissors"];
@@ -46,6 +48,7 @@ function reset() {
     replay = 0;
     computerScore=0;
     playerScore=0;
+    round=1;
     updateScores(playerScore,computerScore);
 }
 
@@ -61,26 +64,34 @@ function playRound() {
 
     if ((playerSelection === computerSelection)) {
         //tie-no points
+        eventStatement=("Round "+round+": "+"Player and Computer selected " + computerSelection);
     }
     else if ((playerSelection === rock) && (computerSelection === paper)) {
         computerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Paper. Computer Wins!");
+        
     } else if ((playerSelection === rock) && (computerSelection === scissors)) {
         playerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Scissors. Player Wins!");
     } else if ((playerSelection === paper) && (computerSelection === scissors)) {
         computerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Scissors. Computer Wins!");
     } else if ((playerSelection === paper) && (computerSelection === rock)) {
         playerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Rock. Player Wins!");
     } else if ((playerSelection === scissors) && (computerSelection === rock)) {
         computerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Rock. Computer Wins!");
     } else if ((playerSelection === scissors) && (computerSelection === paper)) {
         playerScore++;
+        eventStatement=("Round " + round + ": " +"Computer selected: Paper. Player Wins!");
     }
     else {
         alert("No Luck");
     }
-    let msg = ("Player Score: " + playerScore + " Computer Score: " + computerScore);
+    alert(eventStatement);
+    round++;
     updateScores(playerScore, computerScore);
-    // console.log("Game #%s,",replay+1,msg);
 
 }
 
