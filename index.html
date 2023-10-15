@@ -8,6 +8,39 @@
     <title>RPS</title>
 </head>
 <body>
-    <h1>Let's Play Rock, Paper, Scissors</h1>
+    <div class="header">
+        <h1>Rock Paper Scissors</h1>
+    </div>
+    <div class="scoreboard">
+        <div class="computer score">
+            <h2>Computer</h2>
+            <p id = "cpuParagraph">#
+            </p>
+        </div>
+        <div class="player score">
+            <h2>Player</h2>
+            <p>#<span id="playerScore"></span>
+            </p>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="rock card">
+            <img src="./rock.png">
+            <button id="rockBtn"></button>
+        </div>
+        <div class="paper card">
+            <img src="./paper.png">
+            <button id="paperBtn"></button>
+        </div>
+        <div class="scissors card">
+            <img src="./scissors.png">
+            <button id="scissorsBtn"></button>
+        </div>
+    </div>
+    <div class="retry">
+        <button>Play Again</button>
+    </div>
 </body>
+<script src="./javaScript.js" async></script>
+
 </html>
