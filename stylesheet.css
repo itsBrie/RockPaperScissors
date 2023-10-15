@@ -18,7 +18,7 @@ h1{
 .cards{
     display: flex;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 9%;
     gap: 7%;
 }
 
@@ -33,6 +33,10 @@ div .card{
 h2{
     font-size: 4rem;
     color: white;
+}
+h4{
+    margin-top: 0;
+    margin-bottom: 3%;
 }
 
 div p{
@@ -55,4 +59,10 @@ button{
     font-size: 20px;
     color: white;
     margin-top: 4%;
+    text-align: center;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 0%;
 }

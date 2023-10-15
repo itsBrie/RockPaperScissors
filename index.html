@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheet.css">
-    <script src="./javaScript.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat&family=Cormorant+Garamond&family=Libre+Baskerville&family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Tilt+Neon&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheetDom.css">
     <title>RPS</title>
 </head>
 <body>
@@ -14,27 +17,36 @@
     <div class="scoreboard">
         <div class="computer score">
             <h2>Computer</h2>
-            <p id = "cpuParagraph">#
+            <p id = "cpuParagraph">
             </p>
         </div>
+        <div class="gameGuidelines">
+            <h3>There are a total of 5 Rounds</h3>
+            <h4>Choose a sign to begin</h4>
+            <ul>
+                <li>Rock beats Scissors</li>
+                <li>Scissors beats Paper</li>
+                <li>Paper beats Rock</li>
+            </ul>
+    </div>
         <div class="player score">
             <h2>Player</h2>
-            <p>#<span id="playerScore"></span>
+            <p><span id="playerScore"></span>
             </p>
         </div>
     </div>
     <div class="cards">
         <div class="rock card">
             <img src="./rock.png">
-            <button id="rockBtn"></button>
+            <button id="rockBtn">Rock</button>
         </div>
         <div class="paper card">
             <img src="./paper.png">
-            <button id="paperBtn"></button>
+            <button id="paperBtn">Paper</button>
         </div>
         <div class="scissors card">
             <img src="./scissors.png">
-            <button id="scissorsBtn"></button>
+            <button id="scissorsBtn">Scissors</button>
         </div>
     </div>
 </body>

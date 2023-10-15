@@ -64,7 +64,7 @@ function playRound() {
 
     if ((playerSelection === computerSelection)) {
         //tie-no points
-        eventStatement=("Round "+round+": "+"Player and Computer selected " + computerSelection);
+        eventStatement=("Round "+round+": "+"Player and Computer selected " + computerSelection +"! No points given");
     }
     else if ((playerSelection === rock) && (computerSelection === paper)) {
         computerScore++;
