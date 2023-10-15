@@ -1,5 +1,25 @@
 let playerScore=0;
 let computerScore=0;
+let player;
+let replay = 0;
+
+function getComputerChoice() {
+    let choices = ["rock", "paper", "scissors"];
+    let randomChoice = Math.floor(Math.random() * choices.length);
+    return (choices[randomChoice]);
+
+}
+
+function canReplay() {
+    replay++;
+    console.log(replay);
+    if (replay === 5) {
+        endGame();
+        return confirm("Would you like to play again?");
+    }
+    return false;
+}
+
 
 
 function getComputerChoice() {
@@ -9,31 +29,38 @@ function getComputerChoice() {
 
 }
 
-function getPlayerChoice() {
-    let player = prompt("Which do you choose? rock , paper, scissors");
-    return (player);
-}
-function game() {
-    let replay = 0;
-    while (replay <= 5) {
-        playRound();
-        replay++;
+
+
+function getPlayerChoice(choice) {
+    player = choice;
+    playRound();
+    let isReplayable = canReplay();
+    if ((isReplayable && replay === 5) || (!isReplayable && replay === 5)) {
+        reset();
+    }else {
+        // continue game
     }
-    endGame();
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
+function reset() {
+    replay = 0;
+    computerScore=0;
+    playerScore=0;
+    updateScores(playerScore,computerScore);
+}
+
+
+
+
+function playRound() {
+    let playerSelection = player;
+    let computerSelection = getComputerChoice();
     let rock = "rock";
     let paper = "paper";
     let scissors = "scissors";
-    // playerScore = 0;
-    // computerScore = 0;
 
     if ((playerSelection === computerSelection)) {
-        computerScore++;
-        playerScore++;
+        //tie-no points
     }
     else if ((playerSelection === rock) && (computerSelection === paper)) {
         computerScore++;
@@ -51,10 +78,21 @@ function playRound(playerSelection, computerSelection) {
     else {
         alert("No Luck");
     }
-    alert("Player Score: " + playerScore + " Computer Score: " + computerScore);
-    let tally = (playerScore + " and " + computerScore);
-    return (tally);
+    let msg = ("Player Score: " + playerScore + " Computer Score: " + computerScore);
+    updateScores(playerScore, computerScore);
+    // console.log("Game #%s,",replay+1,msg);
+
 }
+
+function updateScores(pScore, cScore) {
+    let cpuSpan = document.getElementById('cpuParagraph');
+    let playerSpan = document.getElementById('playerScore');
+    cpuSpan.innerHTML = '<span id="cpuScore">'+cScore+'</span>';
+    playerSpan.innerText=pScore;
+
+
+}
+
 
 function endGame() {
     let outcome;
@@ -62,17 +100,25 @@ function endGame() {
     if (playerScore > computerScore) {
         outcome = ("The player wins with a total of " + playerScore + " points");
     }
-    else if(computerScore>playerScore) {
+    else if (computerScore > playerScore) {
         outcome = ("The computer wins with a total of " + computerScore + " points");
-    } else{
-        outcome=("The computer and player have tied!");
+    } else {
+        outcome = ("The computer and player have tied!");
     }
     return (alert(outcome))
 }
+
+
 function startGame() {
     alert("Welcome to The Rock, Paper, Scissors Game...Let's begin");
-    game();
+
 }
 
+
+
+
+document.getElementById('rockBtn').addEventListener('click', () => getPlayerChoice("rock"));
+document.getElementById('paperBtn').addEventListener('click', () => getPlayerChoice("paper"));
+document.getElementById('scissorsBtn').addEventListener('click', () => getPlayerChoice("scissors"));
 
 startGame();
