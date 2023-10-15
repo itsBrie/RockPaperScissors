@@ -1,0 +1,60 @@
+body{
+    background-color: #26006e;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    background-color: #1c2b9b;
+    margin: 0%;
+    font-family: 'Tilt Neon', sans-serif;
+}
+.scoreboard{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 7%;
+}
+
+img{
+width: 15rem;
+}
+
+div .card{
+    box-shadow: 10px 10px;
+}
+h2{
+    font-size: 4rem;
+    color: white;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+div p{
+    color: white;
+    font-size: 4rem;
+    font-family: 'Tilt Neon', sans-serif;
+}
+.score{
+    text-align: center;
+}
+
+.retry{
+    margin-top: 5%;
+    text-align: center;
+    height: 60px;
+}
+button{
+    background-color: #1c2b9b;
+    color: white;
+    width: 250px;
+    height: 50px;
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 1rem;
+}
